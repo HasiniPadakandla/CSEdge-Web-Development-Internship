@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Maker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+    }
+    #form {
+      width: 50%;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-right: 1px solid #ddd;
+    }
+    #form label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+    #form input, #form textarea, #form select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    #form button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #form button:hover {
+      background-color: #0056b3;
+    }
+    #resumePreview {
+      width: 50%;
+      padding: 20px;
+      transition: background-color 0.5s, color 0.5s;
+    }
+    #resumePreview h3 {
+      margin-top: 0;
+    }
+    .preview-field {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .template-default {
+      background-color: #fff;
+      color: black;
+    }
+
+    .template-professional {
+      background-color: bisque;
+      color: #333;
+      border: 1px solid #ddd;
+      padding: 20px;
+    }
+
+    .template-creative {
+      background-color: pink;
+      color: black;
+      font-family: "Courier New", Courier, monospace;
+    }
+
+    .template-elegant {
+      background-color: burlywood;
+      color: #5a3d1f;
+      font-family: "Georgia", serif;
+    }
+  </style>
+</head>
+<body>
+  <div id="form">
+    <h3>Resume Details</h3>
+
+    <label for="templateSelect">Choose Template:</label>
+    <select id="templateSelect">
+      <option value="default">Default</option>
+      <option value="professional">Professional</option>
+      <option value="creative">Creative</option>
+      <option value="elegant">Elegant</option>
+    </select>
+
+    <label for="fullNameInput">Full Name:</label>
+    <input id="fullNameInput" type="text" placeholder="Enter your full name">
+
+    <label for="contactInfoInput">Contact Info:</label>
+    <input id="contactInfoInput" type="text" placeholder="Enter your email and phone">
+
+    <label for="locationInput">Location:</label>
+    <input id="locationInput" type="text" placeholder="Enter your location">
+
+    <label for="summaryInput">Career Summary:</label>
+    <textarea id="summaryInput" rows="4" placeholder="Write your career summary"></textarea>
+
+    <label for="skillsInput">Skills:</label>
+    <textarea id="skillsInput" rows="4" placeholder="List your skills"></textarea>
+
+    <label for="experienceInput">Experience:</label>
+    <textarea id="experienceInput" rows="4" placeholder="Describe your experience"></textarea>
+
+    <button id="updateButton">Update Preview</button>
+  </div>
+
+  <div id="resumePreview" class="template-default">
+    <h3>Resume Preview</h3>
+    <p><strong>Full Name:</strong> <span id="previewFullName" class="preview-field"></span></p>
+    <p><strong>Contact Info:</strong> <span id="previewContactInfo" class="preview-field"></span></p>
+    <p><strong>Location:</strong> <span id="previewLocation" class="preview-field"></span></p>
+    <p><strong>Career Summary:</strong> <span id="previewSummary" class="preview-field"></span></p>
+    <p><strong>Skills:</strong> <span id="previewSkills" class="preview-field"></span></p>
+    <p><strong>Experience:</strong> <span id="previewExperience" class="preview-field"></span></p>
+  </div>
+
+  <script>
+    document.getElementById('updateButton').addEventListener('click', function () {
+      const fields = {
+        fullNameInput: 'previewFullName',
+        contactInfoInput: 'previewContactInfo',
+        locationInput: 'previewLocation',
+        summaryInput: 'previewSummary',
+        skillsInput: 'previewSkills',
+        experienceInput: 'previewExperience',
+      };
+
+      Object.keys(fields).forEach((inputId) => {
+        const inputElement = document.getElementById(inputId);
+        const previewElement = document.getElementById(fields[inputId]);
+        if (inputElement && previewElement) {
+          previewElement.textContent = inputElement.value || 'N/A';
+        }
+      });
+
+      console.log('Resume preview updated.');
+    });
+
+    document.getElementById('templateSelect').addEventListener('change', function () {
+      const selectedTemplate = this.value;
+      const previewSection = document.getElementById('resumePreview');
+
+      previewSection.className = '';
+      previewSection.classList.add(`template-${selectedTemplate}`);
+    });
+  </script>
+</body>
+</html>
