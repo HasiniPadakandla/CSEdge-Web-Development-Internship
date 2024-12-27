@@ -1,4 +1,3 @@
-/* General Reset */
 body, html {
     margin: 0;
     padding: 0;
@@ -6,7 +5,6 @@ body, html {
     scroll-behavior: smooth;
 }
 
-/* Navigation Menu */
 header {
     position: fixed;
     top: 0;
@@ -39,7 +37,6 @@ nav ul li a:hover {
     color: #00bcd4;
 }
 
-/* Parallax Sections */
 .parallax {
     background-attachment: fixed;
     background-position: center;
@@ -52,10 +49,9 @@ nav ul li a:hover {
     color: white;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
     font-size: 2rem;
-    animation: fadeIn 2s ease-in-out; /* Animation Effect */
+    animation: fadeIn 2s ease-in-out; 
 }
 
-/* Content Styling */
 .parallax h2, .parallax p, .parallax ul {
     text-align: center;
     color: white;
@@ -71,7 +67,6 @@ ul li {
     font-size: 1.2rem;
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 20px;
@@ -79,7 +74,6 @@ footer {
     color: white;
 }
 
-/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -89,7 +83,6 @@ footer {
     }
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
