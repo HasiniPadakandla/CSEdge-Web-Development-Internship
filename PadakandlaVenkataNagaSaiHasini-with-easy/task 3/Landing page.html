@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            line-height: 1.6;
+        }
+        nav {
+            background: rgb(167, 116, 214);
+            color: #fff;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .slogan {
+            background: pink;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        .about, .services, .offers {
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        .about {
+            background: #6e8cbf;
+        }
+        .services {
+            background: #9bba74;
+        }
+        .offers {
+            background: grey;
+        }
+        footer {
+            background: white;
+            color: black;
+            text-align: center;
+            padding: 1rem;
+        }
+        @media (min-width: 768px) {
+            .slogan, .about, .services, .offers {
+                padding: 3rem 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">My Website</div>
+        <div class="links">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#offers">Offers</a>
+        </div>
+    </nav>
+
+    <section class="slogan">
+        <h1>Your Dream Destination Awaits</h1>
+        <p>Explore endless possibilities with us.</p>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>We are dedicated to making your dreams come true by offering exceptional services and unbeatable offers.</p>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <p>From personalized travel plans to exclusive tours, we have it all covered for you.</p>
+    </section>
+
+    <section id="offers" class="offers">
+        <h2>Special Offers</h2>
+        <p>Check out our amazing deals and discounts designed just for you.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>
